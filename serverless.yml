@@ -1,0 +1,66 @@
+service: ApiIntegration1
+
+frameworkVersion: '3'
+
+
+# - Create default settings for the functions
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize: 256
+  stage: dev
+  #region: us-east-1
+  
+# create the lambda functions
+
+functions:
+
+  # create
+  LambdaPost:
+    handler: handlers/LambdaFunctionPost.post
+    events:
+      - http:
+          path: Books
+          method: post
+          #integration: lambda_proxy
+          #async: true
+
+  # read
+  LambdaGet:
+    handler: handlers/LambdaFunctionGet.get
+    events:
+      - http:
+          path: Books
+          method: get
+          #integration: lambda_proxy
+          #async: true
+  
+  # update
+  LambdaPut:
+    handler: handlers/LambdaFunctionPut.put
+    events:
+      - http:
+          path: Books
+          method: put
+          #integration: lambda_proxy
+          #async: true
+  
+  # delete
+  LambdaDelete:
+    handler: handlers/LambdaFunctionDelete.delete
+    events:
+      - http:
+          path: Books
+          method: delete
+          #integration: lambda_proxy
+          #async: true
+
+  # any
+  LambdaAny:
+    handler: handlers/LambdaFunctionAny.any
+    events:
+      - http:
+          path: BooksAny
+          method: any
+          #integration: lambda_proxy
+          #async: true
