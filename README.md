@@ -1,1 +1,1 @@
-![visitors](https://visitor-badge.glitch.me/badge?page_id=x0rCTF.crud-ops)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fx0rCTF%2Fcrud-ops&countColor=%23263759)
